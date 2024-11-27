@@ -14,7 +14,7 @@ RUN apt-get update && apt-get -y upgrade
 
 RUN apt-get install -y ca-certificates curl gnupg software-properties-common wget unzip apt-transport-https telnet net-tools vim iputils-ping python3 python3-pip gh
 RUN wget -qO- https://download.oracle.com/java/21/latest/jdk-21_linux-x64_bin.tar.gz | tar -xz -C /usr/local && ln -s /usr/local/jdk-21 /usr/lib/jvm/java-21-openjdk-amd64
-RUN apt-get clean
+
 # Install Jupyter
 RUN pip install --no-cache-dir --break-system-packages jupyter ipykernel
 
@@ -59,3 +59,6 @@ RUN apt-get update && apt-get install -y kubectl
 RUN git clone https://github.com/ahmetb/kubectx /opt/kubectx  \
     && ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx  \
     && ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+# Clean Cache
+RUN apt-get clean
