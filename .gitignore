@@ -1,0 +1,34 @@
+# 환경 설정 및 비밀 키 파일
+*.env
+*.properties
+*.yml
+*.yaml
+
+# 로컬 환경에 생성된 파일
+node_modules/
+target/
+build/
+
+# IDE 관련 파일
+.idea/
+.vscode/
+
+# 기타 민감한 정보
+*.pem
+*.crt
+*.key
+
+# 문서
+*.pdf
+
+# BE 소스파일
+backend/*
+
+# FE 소스파일
+frontend/*
+
+# 도커 설정 파일
+docker-compose.override.yml
+password.txt
+!*/**/Dockerfile
+!*/**/docker_volume.sh
